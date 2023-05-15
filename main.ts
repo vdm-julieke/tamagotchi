@@ -1,7 +1,6 @@
-let Voeding = 0
-let Knuffel = 20
-Knuffel = 20
 let Dood = 0
+let Knuffel = 20
+let Voeding = 20
 basic.forever(function () {
     if (Voeding > 10 && Knuffel > 10) {
         basic.showLeds(`
@@ -12,7 +11,7 @@ basic.forever(function () {
             . # # # .
             `)
     }
-    if (Voeding < 0 && Voeding > 10 || Voeding < 0 && Voeding > 10) {
+    if (Voeding > 0 && Voeding < 10 || Voeding > 0 && Voeding < 10) {
         basic.showLeds(`
             . . . . .
             . # . # .
@@ -40,8 +39,8 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-	
-})
-basic.forever(function () {
-	
+    Knuffel += -1
+    basic.pause(200)
+    Voeding += -1
+    basic.pause(200)
 })
