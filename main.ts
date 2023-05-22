@@ -2,6 +2,32 @@ let Dood = 0
 let Knuffel = 20
 let Voeding = 20
 basic.forever(function () {
+    if (input.buttonIsPressed(Button.A)) {
+        Voeding += 5
+    }
+    if (input.buttonIsPressed(Button.B)) {
+        Knuffel += 5
+    }
+    if (input.buttonIsPressed(Button.A) && Dood == 1) {
+        basic.showLeds(`
+            . . . . .
+            # # . # #
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+    }
+    if (input.buttonIsPressed(Button.B) && Dood == 1) {
+        basic.showLeds(`
+            . . . . .
+            # # . # #
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+    }
+})
+basic.forever(function () {
     if (Voeding > 10 && Knuffel > 10) {
         basic.showLeds(`
             . . . . .
@@ -28,14 +54,7 @@ basic.forever(function () {
             # # # # #
             . . . . .
             `)
-    }
-})
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.A)) {
-        Voeding += 5
-    }
-    if (input.buttonIsPressed(Button.B)) {
-        Knuffel += 5
+        Dood = 1
     }
 })
 basic.forever(function () {
